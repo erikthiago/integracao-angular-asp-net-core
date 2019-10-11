@@ -5,3 +5,8 @@
 /ToDo/.vs/ToDo/v16
 /ToDo/obj
 /ToDo/Properties
+/ToDoAPI/.vs
+/ToDoAPI/bin/Debug/netcoreapp2.2
+/ToDoAPI/obj
+/ToDoAPI/Properties
+/ToDoAPI/ToDoAPI.csproj.user
