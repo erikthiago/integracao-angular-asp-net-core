@@ -8,6 +8,8 @@ import { TodoAddComponent } from './todo/todo-add/todo-add.component';
 import { TodoUpdateComponent } from './todo/todo-update/todo-update.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialComponentsModule } from './material-components.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,13 @@
-<form [formGroup]="form">
-    <label>
-      Título
-      <input type="text" formControlName="title">
-    </label>
-    <label>
-      Descrição
-      <input type="text" formControlName="description">
-    </label>
+<mat-card>
+  <form [formGroup]="form" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Título" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Descrição" formControlName="description"></textarea>
+    </mat-form-field>
   </form>
-  
-  <button (click)="updateToDo()">Salvar</button>
+
+  <button mat-flat-button color="accent" (click)="updateToDo()">Salvar</button>
+</mat-card>

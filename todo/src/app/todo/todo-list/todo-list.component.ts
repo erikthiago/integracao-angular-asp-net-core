@@ -9,6 +9,7 @@ import { TodoService } from 'src/app/todo.service';
 export class TodoListComponent implements OnInit {
 
   todoList: any;
+  displayedColumns: string[] = ['id', 'titulo', 'descricao', 'actions'];
 
   constructor(public service: TodoService) { }
 

@@ -1,31 +1,34 @@
-<h2>Listagem de ToDos</h2>
-<button routerLink="/todo-add">Nova ToDo</button>
+<mat-card>
+  <h2>Listagem de ToDos</h2>
+  <button mat-flat-button color="accent" routerLink="/todo-add">Nova ToDo</button>
 
-<table>
-  <thead>
-    <th>
-      Id
-    </th>
-    <th>
-      Título
-    </th>
-    <th>
-      Descrição
-    </th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let todo of todoList">
-      <td>
-        {{todo.id}}
+  <table mat-table [dataSource]="todoList" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell *matHeaderCellDef> Título </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example edit icon"
+          routerLink="/todo-update/{{element.id}}">edit</mat-icon>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon"
+          (click)="deleteToDo(element)">delete</mat-icon>
       </td>
-      <td>
-        {{todo.title}}
-      </td>
-      <td>
-        {{todo.description}} 
-        <a href="#" (click)="deleteToDo(todo)">Excluir</a>
-        <a routerLink="/todo-update/{{todo.id}}">Editar</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
